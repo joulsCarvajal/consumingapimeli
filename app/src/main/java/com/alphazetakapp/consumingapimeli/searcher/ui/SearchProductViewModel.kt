@@ -1,6 +1,5 @@
 package com.alphazetakapp.consumingapimeli.searcher.ui
 
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -21,7 +20,7 @@ class SearchProductViewModel(private val apiService: ApiService) : ViewModel() {
     val productList: LiveData<List<SearchProductItemResponse>> = _productList
 
     private val _errorMessage = MutableLiveData<String?>()
-    val errorMessage : MutableLiveData<String?> = _errorMessage
+    val errorMessage : LiveData<String?> = _errorMessage
 
     fun onSearchQueryChange(query: String) {
         _searchQuery.value = query
@@ -35,7 +34,7 @@ class SearchProductViewModel(private val apiService: ApiService) : ViewModel() {
                     val response = apiService.getSearchproduct(searchQuery.value!!)
                     if (response.isSuccessful) {
                         _productList.value = response.body()?.product ?: emptyList()
-                        _errorMessage.value = null
+                        _errorMessage.value = null //limpia el mensaje de error
                     } else {
                         _errorMessage.value = "Error: ${response.message()}"
                     }
