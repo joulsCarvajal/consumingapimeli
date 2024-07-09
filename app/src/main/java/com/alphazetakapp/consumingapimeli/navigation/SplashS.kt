@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -49,10 +50,11 @@ fun SplashS() {
         ) {
             Image(
                 painter = painterResource(id = R.drawable.handsclap),
-                contentDescription = "Escudo",
+                contentDescription = "",
                 modifier = Modifier
                     .size(120.dp)
                     .alpha(alpha.value)
+                    .testTag("splashImage")
             )
             Text(text = "Mercado Libre", color = Color.White, fontSize = 32.sp)
             Text(text = "Búsqueda", color = Color.White, fontSize = 32.sp)

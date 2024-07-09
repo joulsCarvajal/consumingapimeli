@@ -79,4 +79,20 @@ dependencies {
     //ViewModel
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
     implementation ("androidx.compose.runtime:runtime-livedata:1.2.1")
+
+    // JUnit
+    testImplementation ("junit:junit:4.13.2")
+
+    // AndroidX Test - Core testing libraries
+    testImplementation ("androidx.arch.core:core-testing:2.1.0")
+
+    // Kotlin coroutine testing
+    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
+
+    // Mockito-Kotlin (if you use Mockito for mocking)
+    testImplementation ("org.mockito:mockito-core:3.12.4")
+    testImplementation ("org.mockito.kotlin:mockito-kotlin:3.2.0")
+
+    // MockK (an alternative to Mockito)
+    testImplementation ("io.mockk:mockk:1.12.0")
 }
